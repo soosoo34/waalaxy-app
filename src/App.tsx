@@ -1,26 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import AddActionForm from './components/AddActionForm';
+import ActionQueue from './components/ActionQueue';
+import QueueList from './components/QueueList';
+import { ActionsProvider } from './context/actionsContext';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <ActionsProvider>
+            <div className="App">
+                <AddActionForm/>
+                <ActionQueue/>
+                <QueueList/>
+            </div>
+        </ActionsProvider>
+    );
 }
 
 export default App;
